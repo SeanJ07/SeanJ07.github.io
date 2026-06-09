@@ -1,0 +1,6 @@
+
+# Security - prevent secret commits
+.env
+.env.*
+*.local
+node_modules/
