@@ -1,259 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sean Jenkins — Builder. Creator. Teacher.</title>
-    <meta name="description" content="Sean Jenkins: CSUSB student who founded Hourhand Studios, builds AI systems, and creates digital content that connects with people.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sean Jenkins — Builder. Creator. Teacher.</title>
+<meta name="description" content="Sean Jenkins is a CSUSB student who builds things and helps other people build things too — design, game development, content systems, and STEAM education." />
+<meta name="author" content="Sean Jenkins" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sean Jenkins — Builder. Creator. Teacher." />
+<meta property="og:description" content="Design, game development, content systems, and STEAM education. Selected work by Sean Jenkins." />
+<meta property="og:url" content="https://seanj07.github.io/" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23100F0D'/><text x='50' y='71' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23C41E3A'>J</text></svg>" />
+
+<!-- Fonts: Space Grotesk (display) · Hanken Grotesk (body) · JetBrains Mono (data/labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <!-- Terminal Boot Hero -->
-    <header id="hero">
-        <div class="terminal" id="terminal">
-            <div class="terminal-bar">
-                <span class="terminal-dot"></span>
-                <span class="terminal-dot"></span>
-                <span class="terminal-dot"></span>
-            </div>
-            <div class="terminal-body">
-                <div class="terminal-line" id="line-1"></div>
-                <div class="terminal-line" id="line-2"></div>
-                <div class="terminal-line" id="line-3"></div>
-                <div class="terminal-line" id="line-4"></div>
-                <div class="terminal-line" id="line-5"></div>
-            </div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <a class="brand" href="#top" aria-label="Sean Jenkins — home">
+    <span class="brand__name">SEAN</span><span class="brand__bracket">&#10216;</span><span class="brand__j">J</span><span class="brand__bracket">&#10217;</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav__cta">Let&rsquo;s talk</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ============ TERMINAL BOOT + HERO ============ -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <!-- Terminal boot animation -->
+    <div class="terminal" id="terminal">
+      <div class="terminal__bar">
+        <span class="terminal__dot"></span>
+        <span class="terminal__dot"></span>
+        <span class="terminal__dot"></span>
+      </div>
+      <div class="terminal__body">
+        <div class="terminal__line" id="tl-1"></div>
+        <div class="terminal__line" id="tl-2"></div>
+        <div class="terminal__line" id="tl-3"></div>
+        <div class="terminal__line" id="tl-4"></div>
+        <div class="terminal__line" id="tl-5"></div>
+      </div>
+    </div>
+
+    <!-- Hero content (revealed after terminal) -->
+    <div class="hero__inner" id="hero-content">
+      <p class="eyebrow reveal" data-reveal>&#10216;&nbsp;portfolio&nbsp;&mdash;&nbsp;2026&nbsp;&#10217;</p>
+
+      <h1 class="hero__mark reveal" data-reveal>
+        SEAN<span class="hero__brk">&#10216;</span><span class="hero__j">J</span><span class="hero__brk">&#10217;</span>
+      </h1>
+
+      <p class="hero__roles reveal" data-reveal>
+        <span>Builder</span><i aria-hidden="true">/</i><span>Creator</span><i aria-hidden="true">/</i><span>Teacher</span>
+      </p>
+
+      <p class="hero__lede reveal" data-reveal>
+        A CSUSB student who builds things &mdash; and helps other people build things too.
+        Design, games, content, and a STEAM classroom in the making.
+      </p>
+
+      <div class="hero__pills reveal" data-reveal>
+        <span class="pill">Game Dev</span>
+        <span class="pill">AI Systems</span>
+        <span class="pill pill--gold">4th in California</span>
+        <span class="pill">Digital Design</span>
+        <span class="pill">Social Media</span>
+        <span class="pill">STEAM Education</span>
+      </div>
+
+      <div class="hero__actions reveal" data-reveal>
+        <a class="btn btn--solid" href="#work">See the work</a>
+        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <a class="hero__scroll" href="#work" aria-label="Scroll to work">
+      <span>scroll</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 4v15m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="work" id="work" aria-label="Selected work">
+    <div class="section-head">
+      <p class="eyebrow">&#10216;&nbsp;selected work&nbsp;&#10217;</p>
+      <h2 class="section-title">Things I&rsquo;ve made</h2>
+      <p class="section-sub">Eleven pieces across design, games, content, and code. One person, one through-line.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- 1 · CSUSB Campaign — FEATURED, 2 cols -->
+      <article class="card card--feat" data-reveal>
+        <div class="card__media">
+          <img src="assets/img/projects/csusb_social.webp" alt="Instagram post mockups for the CSUSB Graduate Studies campaign" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">csusb_social.webp</span>
         </div>
-        <div class="hero-content" id="hero-content">
-            <h1 class="hero-name">SEAN<span class="accent">J</span></h1>
-            <p class="hero-tagline">Builder. Creator. Teacher.</p>
-            <div class="hero-badges">
-                <span class="badge accent">Game Dev</span>
-                <span class="badge accent">AI Systems</span>
-                <span class="badge gold">4th in California</span>
-                <span class="badge">Digital Design</span>
-                <span class="badge">Social Media</span>
-                <span class="badge">STEAM Education</span>
-            </div>
+        <div class="card__body">
+          <span class="tag">Social Media &middot; Strategy</span>
+          <h3 class="card__title">CSUSB Graduate Studies Campaign</h3>
+          <p class="card__desc">A full social strategy for CSUSB Graduate Studies &mdash; branded posts, stories, and engagement campaigns built to run across Instagram, Facebook, X, and LinkedIn.</p>
+          <p class="card__proc">Figma &middot; Content strategy &middot; Cross-platform scheduling</p>
         </div>
-    </header>
+      </article>
 
-    <!-- Work Section -->
-    <section id="work">
-        <div class="container">
-            <div class="section-header">
-                <h2>Work</h2>
-                <p>Things I've built, designed, and shipped</p>
-            </div>
-
-            <div class="bento-grid">
-                <!-- Social Media - featured, large card -->
-                <div class="card card-featured" data-brand="csusb">
-                    <div class="card-image">
-                        <img src="assets/img/projects/social_mockup.webp" alt="CSUSB Social Media Campaign" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag">Social Media · Strategy</span>
-                        <h3>CSUSB Graduate Studies Campaign</h3>
-                        <p>Full social media strategy for CSUSB Graduate Studies — content calendar, branded posts, stories, and engagement campaigns across Instagram, Facebook, Twitter, and LinkedIn.</p>
-                        <span class="process-tag">↳ Figma · Content Strategy · Cross-platform scheduling</span>
-                    </div>
-                </div>
-
-                <!-- Stickers -->
-                <div class="card card-wide" data-brand="hourhand">
-                    <div class="card-image">
-                        <img src="assets/img/projects/physical_stickers.webp" alt="Sticker Series" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag gold">Brand Identity · Illustration</span>
-                        <h3>Sticker Series</h3>
-                        <p>Original digital stickers designed for social media engagement and print — from concept to production.</p>
-                        <span class="process-tag">↳ Procreate · Photoshop · Print production</span>
-                    </div>
-                </div>
-
-                <!-- Postcards -->
-                <div class="card" data-brand="hourhand">
-                    <div class="card-image">
-                        <img src="assets/img/projects/postcard_1.webp" alt="Postcard Design" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag">Print · Design</span>
-                        <h3>Postcard Series</h3>
-                        <p>Print-ready postcards bridging offline and digital — one with an integrated QR code for event registration.</p>
-                        <span class="process-tag">↳ Photoshop · Print/Digital integration</span>
-                    </div>
-                </div>
-
-                <!-- Composites -->
-                <div class="card" data-brand="hourhand">
-                    <div class="card-image">
-                        <img src="assets/img/projects/red_in_nyc.webp" alt="Digital Composite" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag">Compositing · Photoshop</span>
-                        <h3>Hybrid Composites</h3>
-                        <p>Photo-realistic composites blending multiple images into single cohesive scenes — surreal, editorial-quality work.</p>
-                        <span class="process-tag">↳ Photoshop · Layer masking · Color grading</span>
-                    </div>
-                </div>
-
-                <!-- BA Commercial - video card -->
-                <div class="card card-wide" data-brand="hourhand">
-                    <div class="card-image card-video">
-                        <div class="video-placeholder">
-                            <span class="play-icon">▶</span>
-                            <span class="video-label">BACOMMERCIAL</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <span class="tag accent">Video Production</span>
-                        <h3>BACOMMERCIAL</h3>
-                        <p>Full promotional video — concept to final edit. Narrative structure, pacing, and a clear promotional message.</p>
-                        <span class="process-tag">↳ Premiere Pro · Short-form social edit (25s) · Full production pipeline</span>
-                    </div>
-                </div>
-
-                <!-- BeneathArcantum -->
-                <div class="card" data-brand="hourhand">
-                    <div class="card-image">
-                        <img src="assets/img/projects/BeneathArcantum.webp" alt="Beneath Arcantum" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag gold">🏆 4th Place · SkillsUSA California</span>
-                        <h3>BeneathArcantum</h3>
-                        <p>Steampunk puzzle-platformer built by Hourhand Studios. 53 custom C# scripts, 12 scenes, a full game loop.</p>
-                        <span class="process-tag">↳ Unity · C# · Game design · 4th place SkillsUSA State Championship</span>
-                    </div>
-                </div>
-
-                <!-- Photography -->
-                <div class="card" data-brand="personal">
-                    <div class="card-image">
-                        <img src="assets/img/projects/sculpture_garden.webp" alt="Photography" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag">Photography · Composition</span>
-                        <h3>Nature Photography</h3>
-                        <p>Compositional eye for social media content — from sculpture gardens to wetland wildlife to mountain panoramas.</p>
-                        <span class="process-tag">↳ iPhone · Lightroom · Manual exposure composition</span>
-                    </div>
-                </div>
-
-                <!-- Logos -->
-                <div class="card card-duo" data-brand="personal">
-                    <div class="card-image card-logos">
-                        <img src="assets/img/projects/jenkins_robotics_logo.webp" alt="Jenkins Robotics Logo" loading="lazy">
-                        <img src="assets/img/projects/jdd_games_logo.webp" alt="JDD Games Logo" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag">Brand Identity · Logo Design</span>
-                        <h3>Brand Logos</h3>
-                        <p>Shield-crest logos for Jenkins Robotics and JDD Games — bold, scalable, designed for print and digital.</p>
-                        <span class="process-tag">↳ Illustrator · Brand identity · Print-ready</span>
-                    </div>
-                </div>
-
-                <!-- Character Turnaround -->
-                <div class="card" data-brand="hourhand">
-                    <div class="card-image">
-                        <img src="assets/img/projects/character_turnaround.webp" alt="Character Turnaround" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag">Concept Art · Character Design</span>
-                        <h3>A. Gerehart Character Turnaround</h3>
-                        <p>Front and side view turnaround for the protagonist of BeneathArcantum — clean model sheet for 3D reference.</p>
-                        <span class="process-tag">↳ Digital illustration · Character design · Game preproduction</span>
-                    </div>
-                </div>
-
-                <!-- Hourhand Website -->
-                <div class="card" data-brand="hourhand">
-                    <div class="card-image">
-                        <img src="assets/img/projects/hourhand_site.webp" alt="Hourhand Studios Website" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag">Web · HTML/CSS</span>
-                        <h3>Hourhand Studios</h3>
-                        <p>Dark-themed portfolio and storefront for the studio — animated sections, team page, clean modular design.</p>
-                        <span class="process-tag">↳ HTML · CSS · Vanilla JS · Responsive design</span>
-                    </div>
-                </div>
-
-                <!-- Mood Board -->
-                <div class="card" data-brand="hourhand">
-                    <div class="card-image">
-                        <img src="assets/img/projects/holiday_moodboard.webp" alt="Holiday Mood Board" loading="lazy">
-                    </div>
-                    <div class="card-info">
-                        <span class="tag">Visual Strategy · Design</span>
-                        <h3>Holiday Mood Board</h3>
-                        <p>Seasonal visual strategy board — curating color, typography, and imagery for cohesive brand moments.</p>
-                        <span class="process-tag">↳ Photoshop · Visual strategy · Brand consistency</span>
-                    </div>
-                </div>
-            </div>
+      <!-- 6 · BeneathArcantum — TALL -->
+      <article class="card card--tall" data-reveal>
+        <div class="card__media card__media--cover">
+          <img src="assets/img/projects/beneath_arcantum.webp" alt="Beneath Arcantum steampunk game poster by Hourhand Studios" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">beneath_arcantum.webp</span>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm Sean Jenkins — a CSUSB student who builds things and helps other people build things too.</p>
-                    <p>In high school, I founded <strong>Hourhand Studios</strong> and led a team to 4th place at SkillsUSA California State Championship with our game <em>BeneathArcantum</em>. That taught me what it means to ship under pressure — 53 C# scripts, 12 scenes, one deadline, no excuses.</p>
-                    <p>Now I'm building AI tools, creating content systems, and working toward <strong>Jenkins Digital Design</strong> — a STEAM education platform where each of us teaches what we're passionate about. Music production. Cybersecurity. Astronomy. Code. Because the best way to learn something is to teach it.</p>
-                    <p class="about-note">When I'm not coding, I'm watching Gurren Lagann, building in Minecraft, or encouraging someone into engineering who didn't think they could do it.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">4th</span>
-                        <span class="stat-label">SkillsUSA California</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">53</span>
-                        <span class="stat-label">C# Scripts Shipped</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">Brand Identities Built</span>
-                    </div>
-                </div>
-            </div>
+        <div class="card__body">
+          <span class="tag tag--gold">&#127942; 4th &middot; SkillsUSA California</span>
+          <h3 class="card__title">Beneath Arcantum</h3>
+          <p class="card__desc">A steampunk puzzle-platformer built by Hourhand Studios &mdash; 53 custom C# scripts, 12 scenes, and a full game loop, shipped under competition pressure.</p>
+          <p class="card__proc">Unity &middot; C# &middot; Game design &middot; 4th, SkillsUSA State</p>
         </div>
-    </section>
+      </article>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Let's Talk</h2>
-            </div>
-            <div class="contact-links">
-                <a href="mailto:seanj07@csusb.edu" class="cta-btn primary">Email</a>
-                <a href="https://linkedin.com/in/seanjenkins07" class="cta-btn secondary" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/SeanJ07" class="cta-btn secondary" target="_blank" rel="noopener">GitHub</a>
-            </div>
+      <!-- 4 · Hybrid Composites -->
+      <article class="card" data-reveal>
+        <div class="card__media card__media--cover">
+          <img src="assets/img/projects/composite.webp" alt="Digital composite blending a character into a New York City street scene" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">composite.webp</span>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p class="footer-brand">SEAN<span class="accent">J</span></p>
-            <p class="footer-text">Builder. Creator. Teacher.</p>
-            <p class="copyright">Built by Sean Jenkins · <a href="https://github.com/SeanJ07/SeanJ07.github.io" target="_blank" rel="noopener">Source</a></p>
+        <div class="card__body">
+          <span class="tag">Compositing &middot; Photoshop</span>
+          <h3 class="card__title">Hybrid Composites</h3>
+          <p class="card__desc">Photo-realistic composites that blend multiple images into one cohesive scene &mdash; surreal, editorial-quality work where the seams disappear.</p>
+          <p class="card__proc">Photoshop &middot; Layer masking &middot; Color grading</p>
         </div>
-    </footer>
+      </article>
 
-    <script src="main.js"></script>
+      <!-- 2 · Sticker Series — TALL -->
+      <article class="card card--tall" data-reveal>
+        <div class="card__media card__media--cover">
+          <img src="assets/img/projects/stickers.webp" alt="Printed sheet of original character stickers" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">stickers.webp</span>
+        </div>
+        <div class="card__body">
+          <span class="tag tag--gold">Brand Identity &middot; Illustration</span>
+          <h3 class="card__title">Sticker Series</h3>
+          <p class="card__desc">Original digital stickers designed for social engagement and print &mdash; carried from concept all the way through to production.</p>
+          <p class="card__proc">Procreate &middot; Photoshop &middot; Print production</p>
+        </div>
+      </article>
+
+      <!-- 3 · Postcard Series -->
+      <article class="card" data-reveal>
+        <div class="card__media card__media--cover">
+          <img src="assets/img/projects/postcard.webp" alt="Print-ready event postcard design" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">postcard.webp</span>
+        </div>
+        <div class="card__body">
+          <span class="tag">Print &middot; Design</span>
+          <h3 class="card__title">Postcard Series</h3>
+          <p class="card__desc">Print-ready postcards that bridge offline and digital &mdash; one carries an integrated QR code that drops straight into event registration.</p>
+          <p class="card__proc">Photoshop &middot; Print / digital integration</p>
+        </div>
+      </article>
+
+      <!-- 5 · BACOMMERCIAL — FEATURED video, 2 cols -->
+      <article class="card card--feat card--video" data-reveal>
+        <button class="card__media card__media--video" type="button" aria-label="BACOMMERCIAL promotional video (play)">
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </span>
+          <span class="video__meta"><b>BACOMMERCIAL</b><i>0:25 &middot; full production</i></span>
+        </button>
+        <div class="card__body">
+          <span class="tag tag--accent">Video Production</span>
+          <h3 class="card__title">BACOMMERCIAL</h3>
+          <p class="card__desc">A promotional video taken from concept to final cut &mdash; narrative structure, pacing, and editing tuned for a single, sharp message.</p>
+          <p class="card__proc">Premiere Pro &middot; Short-form social edit (25s) &middot; Full pipeline</p>
+        </div>
+      </article>
+
+      <!-- 10 · Hourhand Studios — TALL -->
+      <article class="card card--tall" data-reveal>
+        <div class="card__media card__media--cover">
+          <img src="assets/img/projects/hourhand_site.webp" alt="Dark-themed Hourhand Studios website" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">hourhand_site.webp</span>
+        </div>
+        <div class="card__body">
+          <span class="tag">Web &middot; HTML / CSS</span>
+          <h3 class="card__title">Hourhand Studios</h3>
+          <p class="card__desc">A dark-themed portfolio and storefront for the studio &mdash; animated sections, a team page, and a clean, modular layout.</p>
+          <p class="card__proc">HTML &middot; CSS &middot; Vanilla JS &middot; Responsive</p>
+        </div>
+      </article>
+
+      <!-- 7 · Nature Photography -->
+      <article class="card" data-reveal>
+        <div class="card__media card__media--cover">
+          <img src="assets/img/projects/photography.webp" alt="Landscape photograph of a sculpture garden" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">photography.webp</span>
+        </div>
+        <div class="card__body">
+          <span class="tag">Photography &middot; Composition</span>
+          <h3 class="card__title">Nature Photography</h3>
+          <p class="card__desc">A compositional eye built for content &mdash; from sculpture gardens to wetlands, framed and exposed by hand.</p>
+          <p class="card__proc">iPhone &middot; Lightroom &middot; Manual exposure</p>
+        </div>
+      </article>
+
+      <!-- 8 · Brand Logos — DUO -->
+      <article class="card card--duo" data-reveal>
+        <div class="card__media card__media--logos">
+          <img src="assets/img/projects/logo_robotics.webp" alt="Jenkins Robotics shield-crest logo" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <img src="assets/img/projects/logo_jddgames.webp" alt="JDD Games shield-crest logo" loading="lazy" />
+          <span class="ph" aria-hidden="true">logo_robotics.webp + logo_jddgames.webp</span>
+        </div>
+        <div class="card__body">
+          <span class="tag">Brand Identity &middot; Logo Design</span>
+          <h3 class="card__title">Brand Logos</h3>
+          <p class="card__desc">Shield-crest marks for Jenkins Robotics and JDD Games &mdash; scalable, print-ready, and built to read at any size.</p>
+          <p class="card__proc">Illustrator &middot; Brand identity &middot; Print-ready</p>
+        </div>
+      </article>
+
+      <!-- 9 · Character Turnaround -->
+      <article class="card" data-reveal>
+        <div class="card__media card__media--matte">
+          <img src="assets/img/projects/character_turnaround.webp" alt="Front and side view character turnaround for A. Gerehart" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">character_turnaround.webp</span>
+        </div>
+        <div class="card__body">
+          <span class="tag">Concept Art &middot; Character Design</span>
+          <h3 class="card__title">A. Gerehart Turnaround</h3>
+          <p class="card__desc">Front and side turnaround for the protagonist of Beneath Arcantum &mdash; a clean model sheet built for 3D reference.</p>
+          <p class="card__proc">Digital illustration &middot; Character design &middot; Pre-production</p>
+        </div>
+      </article>
+
+      <!-- 11 · Holiday Mood Board -->
+      <article class="card" data-reveal>
+        <div class="card__media card__media--cover">
+          <img src="assets/img/projects/moodboard.webp" alt="Seasonal visual strategy mood board" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <span class="ph" aria-hidden="true">moodboard.webp</span>
+        </div>
+        <div class="card__body">
+          <span class="tag">Visual Strategy &middot; Design</span>
+          <h3 class="card__title">Holiday Mood Board</h3>
+          <p class="card__desc">A seasonal visual strategy board &mdash; curating color, typography, and imagery for cohesive brand moments.</p>
+          <p class="card__proc">Photoshop &middot; Visual strategy &middot; Brand consistency</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about" aria-label="About Sean Jenkins">
+    <div class="about__panel">
+      <div class="about__text">
+        <p class="eyebrow">&#10216;&nbsp;about&nbsp;&#10217;</p>
+        <h2 class="section-title">The short version</h2>
+        <p>I&rsquo;m Sean Jenkins &mdash; a CSUSB student who builds things and helps other people build things too.</p>
+        <p>In high school I founded <strong>Hourhand Studios</strong> and led a team to 4th place at the SkillsUSA California State Championship with our game <em>Beneath Arcantum</em>. That taught me what it means to ship under pressure &mdash; 53 C# scripts and 12 scenes, finished on a deadline that didn&rsquo;t move.</p>
+        <p>Now I&rsquo;m building AI tools, creating content systems, and working toward <strong>Jenkins Digital Design</strong> &mdash; a STEAM education platform where each of us teaches what we&rsquo;re passionate about. Music production. Cybersecurity. Astronomy. Code. Because the best way to learn something is to teach it.</p>
+        <p class="about__note">When I&rsquo;m not coding, I&rsquo;m watching Gurren Lagann, building in Minecraft, or encouraging someone into engineering who didn&rsquo;t think they could do it.</p>
+      </div>
+
+      <ul class="stats" aria-label="At a glance">
+        <li><span class="stats__num">4th</span><span class="stats__lbl">SkillsUSA California</span></li>
+        <li><span class="stats__num">53</span><span class="stats__lbl">C# scripts shipped</span></li>
+        <li><span class="stats__num">4</span><span class="stats__lbl">Brand identities built</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-label="Contact">
+    <p class="eyebrow">&#10216;&nbsp;contact&nbsp;&#10217;</p>
+    <h2 class="contact__title">Let&rsquo;s talk</h2>
+    <p class="contact__sub">Got a project, a class, or a wild idea worth building? I&rsquo;m listening.</p>
+    <div class="contact__actions">
+      <a class="btn btn--solid" href="mailto:seanj07@csusb.edu">Email me</a>
+      <a class="btn btn--ghost" href="https://linkedin.com/in/seanjenkins07" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn--ghost" href="https://github.com/SeanJ07" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <a class="brand brand--sm" href="#top" aria-label="Sean Jenkins — back to top">
+    <span class="brand__name">SEAN</span><span class="brand__bracket">&#10216;</span><span class="brand__j">J</span><span class="brand__bracket">&#10217;</span>
+  </a>
+  <p class="footer__tag">Builder. Creator. Teacher.</p>
+  <p class="footer__meta">Built by Sean Jenkins &middot; <a href="https://github.com/SeanJ07/SeanJ07.github.io" target="_blank" rel="noopener">Source</a></p>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
