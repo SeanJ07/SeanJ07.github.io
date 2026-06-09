@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sean Jenkins · Builder · Creator · Teacher</title>
-<meta name="description" content="CSUSB student. Builds things and helps other people build things too. Design, games, content systems, and STEAM education." />
+<title>Sean Jenkins — Designer, Developer, Educator</title>
+<meta name="description" content="Sean Jenkins: CSUSB student who runs social media, builds games, and teaches people to create. Portfolio and selected work." />
 <meta name="author" content="Sean Jenkins" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Sean Jenkins · Builder · Creator · Teacher" />
-<meta property="og:description" content="Design, games, content systems, and STEAM education. Selected work by Sean Jenkins." />
+<meta property="og:title" content="Sean Jenkins — Designer, Developer, Educator" />
+<meta property="og:description" content="Social media, game dev, design, and STEAM education. Selected work by Sean Jenkins." />
 <meta property="og:url" content="https://seanj07.github.io/" />
 <meta property="og:image" content="https://seanj07.github.io/assets/img/projects/csusb_social.webp" />
 <meta name="theme-color" content="#100f0d" />
@@ -18,95 +18,58 @@
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23100F0D'/><text x='50' y='71' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23C41E3A'>J</text></svg>" />
 
-<!-- Fonts: Space Grotesk (display) · Hanken Grotesk (body) · JetBrains Mono (data/labels) -->
+<!-- One font: Inter. Not 3. -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<!-- Skip to content (accessibility) -->
+<!-- Skip to content -->
 <a href="#work" class="skip-link">Skip to work</a>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="top">
-  <a class="brand" href="#top" aria-label="Sean Jenkins home">
+  <a class="brand" href="#top" aria-label="Home">
     <span class="brand__name">SEAN</span><span class="brand__bracket">&#10216;</span><span class="brand__j">J</span><span class="brand__bracket">&#10217;</span>
   </a>
   <nav class="nav__links" aria-label="Primary">
     <a href="#work">Work</a>
     <a href="#about">About</a>
-    <a href="#contact" class="nav__cta">Let&rsquo;s talk</a>
+    <a href="#contact" class="nav__cta">Get in touch</a>
   </nav>
 </header>
 
 <main>
-  <!-- ============ TERMINAL BOOT + HERO ============ -->
+
+  <!-- ============ HERO (no terminal, no glow, no grain, no pills) ============ -->
   <section class="hero" aria-label="Introduction">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="hero__grain" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="eyebrow">&#10216;&nbsp;portfolio&nbsp;2026&nbsp;&#10217;</p>
 
-    <!-- Terminal boot animation -->
-    <div class="terminal" id="terminal">
-      <div class="terminal__bar">
-        <span class="terminal__dot"></span>
-        <span class="terminal__dot"></span>
-        <span class="terminal__dot"></span>
-      </div>
-      <div class="terminal__body">
-        <div class="terminal__line" id="tl-1"></div>
-        <div class="terminal__line" id="tl-2"></div>
-        <div class="terminal__line" id="tl-3"></div>
-        <div class="terminal__line" id="tl-4"></div>
-        <div class="terminal__line" id="tl-5"></div>
-      </div>
-    </div>
-
-    <!-- Hero content (revealed after terminal) -->
-    <div class="hero__inner" id="hero-content">
-      <p class="eyebrow reveal" data-reveal>&#10216;&nbsp;portfolio&nbsp;2026&nbsp;&#10217;</p>
-
-      <h1 class="hero__mark reveal" data-reveal>
+      <h1 class="hero__mark">
         SEAN<span class="hero__brk">&#10216;</span><span class="hero__j">J</span><span class="hero__brk">&#10217;</span>
       </h1>
 
-      <p class="hero__roles reveal" data-reveal>
-        <span>Builder</span><i aria-hidden="true">/</i><span>Creator</span><i aria-hidden="true">/</i><span>Teacher</span>
+      <p class="hero__lede">
+        I'm Sean. I run social media for CSUSB, build games with Hourhand Studios,
+        and help people learn to make things. Here's what I've been working on.
       </p>
 
-      <p class="hero__lede reveal" data-reveal>
-        CSUSB student. I build things and help other people build things too.
-        Design, games, content, and a STEAM classroom in progress.
-      </p>
-
-      <div class="hero__pills reveal" data-reveal>
-        <span class="pill">Social Media</span>
-        <span class="pill">Game Dev</span>
-        <span class="pill pill--gold">4th in California</span>
-        <span class="pill">Digital Design</span>
-        <span class="pill">AI Systems</span>
-        <span class="pill">STEAM Education</span>
-      </div>
-
-      <div class="hero__actions reveal" data-reveal>
+      <div class="hero__actions">
         <a class="btn btn--solid" href="#work">See the work</a>
         <a class="btn btn--ghost" href="#contact">Get in touch</a>
       </div>
     </div>
-
-    <a class="hero__scroll" href="#work" aria-label="Scroll to work">
-      <span>scroll</span>
-      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 4v15m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
   </section>
 
   <!-- ============ WORK ============ -->
   <section class="work" id="work" aria-label="Selected work">
     <div class="section-head">
       <p class="eyebrow">&#10216;&nbsp;selected work&nbsp;&#10217;</p>
-      <h2 class="section-title">Things I&rsquo;ve made</h2>
+      <h2 class="section-title">Things I've made</h2>
       <p class="section-sub">Ten pieces across social media, design, games, and code. All mine.</p>
     </div>
 
@@ -129,7 +92,7 @@
       <!-- 2 · Hourhand Studios — FEATURED, 2 cols -->
       <article class="card card--feat" data-reveal data-lightbox data-title="Hourhand Studios" data-desc="Managed branding, social content, and web presence for the studio. Also designed and built the site from scratch." data-img="assets/img/projects/hourhand_composite.webp" data-link="https://github.com/SeanJ07/hourhand-studios" data-gallery="assets/img/projects/hourhand_site_1.webp,assets/img/projects/hourhand_site_2.webp,assets/img/projects/hourhand_site_3.webp,assets/img/projects/hourhand_site_4.webp">
         <div class="card__media">
-          <img src="assets/img/projects/hourhand_composite.webp" alt="Dark-themed Hourhand Studios website screenshots" width="800" height="450" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <img src="assets/img/projects/hourhand_composite.webp" alt="Hourhand Studios website screenshots" width="800" height="450" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
           <span class="ph" aria-hidden="true">hourhand_composite.webp</span>
         </div>
         <div class="card__body">
@@ -140,7 +103,7 @@
         </div>
       </article>
 
-      <!-- 3 · Social Media Stories — TALL (moved up) -->
+      <!-- 3 · Social Media Stories — TALL -->
       <article class="card card--tall" data-reveal data-lightbox data-title="Social Media Stories" data-desc="Instagram story designs for game promotion, campus events, and studio branding. Vertical-first, built for engagement and shareability." data-img="assets/img/projects/social_stories_hero.webp" data-gallery="assets/img/projects/insta_33d7f629-397.webp,assets/img/projects/insta_55d32d6f-6a3.webp,assets/img/projects/insta_578bcabf-e1c.webp,assets/img/projects/insta_7962df03-e47.webp,assets/img/projects/insta_90240e0d-70a.webp,assets/img/projects/insta_f83e240f-5d3.webp">
         <div class="card__media card__media--cover">
           <img src="assets/img/projects/social_stories_hero.webp" alt="Instagram story designs for game promotion and campus events" width="400" height="500" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
@@ -200,11 +163,11 @@
       <!-- 7 · Beneath Arcantum -->
       <article class="card" data-reveal data-lightbox data-title="Beneath Arcantum" data-desc="A steampunk puzzle-platformer built for SkillsUSA competition. 53 custom C# scripts, 12 scenes, a full game loop. 4th place, California State Championship." data-img="assets/img/projects/beneath_arcantum.webp">
         <div class="card__media card__media--cover">
-          <img src="assets/img/projects/beneath_arcantum.webp" alt="Beneath Arcantum steampunk game poster by Hourhand Studios" width="400" height="300" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <img src="assets/img/projects/beneath_arcantum.webp" alt="Beneath Arcantum steampunk game poster" width="400" height="300" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
           <span class="ph" aria-hidden="true">beneath_arcantum.webp</span>
         </div>
         <div class="card__body">
-          <span class="tag tag--gold">&#127942; 4th · SkillsUSA California</span>
+          <span class="tag tag--gold">4th place · SkillsUSA California</span>
           <h3 class="card__title">Beneath Arcantum</h3>
           <p class="card__desc">Competition piece — a steampunk puzzle-platformer built for SkillsUSA. 53 custom C# scripts, 12 scenes, finished under competition pressure. 4th place, California State.</p>
           <p class="card__proc">Unity · C# · Game design · SkillsUSA State</p>
@@ -227,7 +190,7 @@
 
       <!-- 9 · Certifications -->
       <article class="card" data-reveal data-lightbox data-title="Certifications" data-desc="4th place, SkillsUSA California State Championship. Canva Essentials certified. Contestant resume on file." data-img="assets/img/projects/certifications_badge.webp">
-        <div class="card__media card__media--matte" style="background:var(--ink-2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:28px 22px;">
+        <div class="card__media card__media--matte" style="background:var(--matte);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:28px 22px;">
           <img src="assets/img/projects/certifications_badge.webp" alt="SkillsUSA 4th place California and Canva Essentials certification" width="300" height="140" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" style="width:100%;max-height:140px;object-fit:contain;" />
           <span class="ph" aria-hidden="true">certifications_badge.webp</span>
         </div>
@@ -242,7 +205,7 @@
       <!-- 10 · Campaign Mood Board -->
       <article class="card" data-reveal data-lightbox data-title="Campaign Mood Board" data-desc="A mood board built in Illustrator to define a campaign's visual language from scratch. Color, type, and imagery pulled into one system." data-img="assets/img/projects/moodboard_campaign.webp">
         <div class="card__media card__media--cover">
-          <img src="assets/img/projects/moodboard_campaign.webp" alt="Campaign mood board pulling together color, type, and imagery" width="800" height="618" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
+          <img src="assets/img/projects/moodboard_campaign.webp" alt="Campaign mood board" width="800" height="618" loading="lazy" onerror="this.closest('.card__media').classList.add('is-missing')" />
           <span class="ph" aria-hidden="true">moodboard_campaign.webp</span>
         </div>
         <div class="card__body">
@@ -262,10 +225,10 @@
       <div class="about__text">
         <p class="eyebrow">&#10216;&nbsp;about&nbsp;&#10217;</p>
         <h2 class="section-title">The short version</h2>
-        <p>I&rsquo;m Sean Jenkins, a CSUSB student who builds things and helps other people build things too.</p>
-        <p>In high school I founded <strong>Hourhand Studios</strong> and served as Creative Director and Social Media Manager, leading a team to 4th place at the SkillsUSA California State Championship with our game <em>Beneath Arcantum</em>. That taught me what it means to ship under pressure. 53 C# scripts and 12 scenes, finished on a deadline that didn&rsquo;t move.</p>
-        <p>Now I&rsquo;m building AI tools and content systems, and working toward <strong>Jenkins Digital Design</strong>, a STEAM education platform where each of us teaches what we&rsquo;re passionate about. Music production. Cybersecurity. Astronomy. Code. Because the best way to learn something is to teach it.</p>
-        <p class="about__note">When I&rsquo;m not coding, I&rsquo;m watching Gurren Lagann, building in Minecraft, or encouraging someone into engineering who didn&rsquo;t think they could do it.</p>
+        <p>I'm Sean Jenkins. I'm a CSUSB student who builds things and helps other people build things too.</p>
+        <p>In high school I founded <strong>Hourhand Studios</strong> and served as Creative Director and Social Media Manager. We took 4th at the SkillsUSA California State Championship with our game <em>Beneath Arcantum</em> — 53 C# scripts, 12 scenes, finished on a deadline that didn't move.</p>
+        <p>Now I run social media for CSUSB Graduate Studies, build AI tools on the side, and work toward <strong>Jenkins Digital Design</strong> — a STEAM education platform where each of us teaches what we know. Music, cybersecurity, astronomy, code. The best way to learn something is to teach it.</p>
+        <p class="about__note">When I'm not working, I'm watching Gurren Lagann, building in Minecraft, or convincing someone they can do engineering even if they don't think they can.</p>
       </div>
 
       <ul class="stats" aria-label="At a glance">
@@ -279,8 +242,8 @@
   <!-- ============ CONTACT ============ -->
   <section class="contact" id="contact" aria-label="Contact">
     <p class="eyebrow">&#10216;&nbsp;contact&nbsp;&#10217;</p>
-    <h2 class="contact__title">Let&rsquo;s talk</h2>
-    <p class="contact__sub">Got a project, a class, or a wild idea worth building? I&rsquo;m listening.</p>
+    <h2 class="contact__title">Let's talk</h2>
+    <p class="contact__sub">Got a project, a class, or an idea worth building? I'm listening.</p>
     <div class="contact__actions">
       <a class="btn btn--solid" href="mailto:sean.anthony.jenkins.41@gmail.com">Email me</a>
       <a class="btn btn--ghost" href="assets/docs/SeanJ_Resume.pdf" target="_blank" rel="noopener">View resume</a>
@@ -292,11 +255,11 @@
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <a class="brand brand--sm" href="#top" aria-label="Sean Jenkins back to top">
+  <a class="brand brand--sm" href="#top" aria-label="Back to top">
     <span class="brand__name">SEAN</span><span class="brand__bracket">&#10216;</span><span class="brand__j">J</span><span class="brand__bracket">&#10217;</span>
   </a>
   <p class="footer__tag">Builder. Creator. Teacher.</p>
-  <p class="footer__meta">Built by Sean Jenkins &middot; <a href="https://github.com/SeanJ07/SeanJ07.github.io" target="_blank" rel="noopener">Source</a></p>
+  <p class="footer__meta">Built by Sean Jenkins · <a href="https://github.com/SeanJ07/SeanJ07.github.io" target="_blank" rel="noopener">Source</a></p>
 </footer>
 
 <!-- Lightbox overlay -->
@@ -317,9 +280,7 @@
 <noscript>
   <style>
     .hero__inner { opacity:1!important; transform:none!important; }
-    .terminal { display:none!important; }
     [data-reveal] { opacity:1!important; transform:none!important; }
-    .card { cursor:default; }
   </style>
 </noscript>
 </body>
