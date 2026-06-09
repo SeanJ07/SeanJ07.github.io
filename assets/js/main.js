@@ -234,6 +234,31 @@
       lbLink.style.display = "none";
     }
 
+    // Gallery support: if data-gallery exists, show thumbnails
+    var gallery = card.getAttribute("data-gallery") || "";
+    var galleryEl = overlay.querySelector(".lightbox-gallery");
+    if (galleryEl) {
+      if (gallery) {
+        var imgs = gallery.split(",");
+        galleryEl.innerHTML = "";
+        imgs.forEach(function (src) {
+          var thumb = document.createElement("img");
+          thumb.src = src;
+          thumb.alt = title + " detail";
+          thumb.className = "lightbox-thumb";
+          thumb.addEventListener("click", function (e) {
+            e.stopPropagation();
+            lbImg.src = src;
+          });
+          galleryEl.appendChild(thumb);
+        });
+        galleryEl.style.display = "flex";
+      } else {
+        galleryEl.innerHTML = "";
+        galleryEl.style.display = "none";
+      }
+    }
+
     overlay.classList.add("is-open");
     overlay.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";

@@ -636,5 +636,35 @@ strong { color: var(--crimson); }
 }
 .lightbox-link { margin-top: 8px; }
 
+/* lightbox gallery (thumbnails for multi-image cards) */
+.lightbox-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8px 0 0;
+}
+.lightbox-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color .2s;
+}
+.lightbox-thumb:hover {
+  border-color: var(--gold);
+}
+
+/* sticker gallery: taller thumbs for portrait stickers */
+[data-title="Sticker Series"] ~ .lightbox-overlay .lightbox-thumb,
+.lightbox-thumb[data-ish="tall"] {
+  width: 60px;
+  height: 80px;
+}
+
 /* ---------- no-JS fallback ---------- */
 /* If JS doesn't run, .hero__inner stays hidden. This noscript rule forces it visible. */
