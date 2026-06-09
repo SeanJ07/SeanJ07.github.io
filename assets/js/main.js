@@ -10,116 +10,122 @@
   var heroContent = document.getElementById("hero-content");
   var booted = false;
 
-  var lines = [
-    { prompt: "> ", text: "initializing sean_jenkins.dev...", delay: 50 },
-    { prompt: "> ", text: "loading creative_work... ", suffix: "✓", delay: 40, hold: 400 },
-    { prompt: "> ", text: "loading game_dev... ", suffix: "✓", delay: 40, hold: 350 },
-    { prompt: "> ", text: "loading ai_systems... ", suffix: "✓", delay: 40, hold: 350 },
-    { prompt: "> ", text: "loading social_media... ", suffix: "✓", delay: 40, hold: 800 },
-  ];
+  // If no terminal element (e.g., simplified page), show hero directly
+  if (!terminal || !heroContent) {
+    if (heroContent) heroContent.classList.add("visible");
+    booted = true;
+  }
 
-  var terminalLines = [
-    document.getElementById("tl-1"),
-    document.getElementById("tl-2"),
-    document.getElementById("tl-3"),
-    document.getElementById("tl-4"),
-    document.getElementById("tl-5"),
-  ];
+  if (terminal && heroContent) {
+    var lines = [
+      { prompt: "> ", text: "initializing sean_jenkins.dev...", delay: 50 },
+      { prompt: "> ", text: "loading creative_work... ", suffix: "✓", delay: 40, hold: 400 },
+      { prompt: "> ", text: "loading game_dev... ", suffix: "✓", delay: 40, hold: 350 },
+      { prompt: "> ", text: "loading ai_systems... ", suffix: "✓", delay: 40, hold: 350 },
+      { prompt: "> ", text: "loading social_media... ", suffix: "✓", delay: 40, hold: 800 },
+    ];
 
-  function typeLine(lineIndex) {
-    if (lineIndex >= lines.length) {
-      setTimeout(transitionToHero, 600);
-      return;
-    }
+    var terminalLines = [
+      document.getElementById("tl-1"),
+      document.getElementById("tl-2"),
+      document.getElementById("tl-3"),
+      document.getElementById("tl-4"),
+      document.getElementById("tl-5"),
+    ];
 
-    var line = lines[lineIndex];
-    var el = terminalLines[lineIndex];
-    var text = line.text;
-    var delay = line.delay || 50;
-
-    el.innerHTML = '<span class="prompt">' + line.prompt + "</span>";
-
-    var charIndex = 0;
-    function typeChar() {
-      if (charIndex < text.length) {
-        el.innerHTML =
-          '<span class="prompt">' +
-          line.prompt +
-          '</span><span class="typed">' +
-          text.substring(0, charIndex + 1) +
-          "</span>";
-        charIndex++;
-        setTimeout(typeChar, delay + Math.random() * 30);
-      } else {
-        if (line.suffix) {
-          setTimeout(function () {
-            el.innerHTML =
-              '<span class="prompt">' +
-              line.prompt +
-              '</span><span class="typed">' +
-              text +
-              "</span><span class=\"check\">" +
-              line.suffix +
-              "</span>";
-          }, 200);
-        }
-        var holdTime = line.hold || 300;
-        setTimeout(function () { typeLine(lineIndex + 1); }, holdTime);
+    function typeLine(lineIndex) {
+      if (lineIndex >= lines.length) {
+        setTimeout(transitionToHero, 600);
+        return;
       }
+
+      var line = lines[lineIndex];
+      var el = terminalLines[lineIndex];
+      var text = line.text;
+      var delay = line.delay || 50;
+
+      el.innerHTML = '<span class="prompt">' + line.prompt + "</span>";
+
+      var charIndex = 0;
+      function typeChar() {
+        if (charIndex < text.length) {
+          el.innerHTML =
+            '<span class="prompt">' +
+            line.prompt +
+            '</span><span class="typed">' +
+            text.substring(0, charIndex + 1) +
+            "</span>";
+          charIndex++;
+          setTimeout(typeChar, delay + Math.random() * 30);
+        } else {
+          if (line.suffix) {
+            setTimeout(function () {
+              el.innerHTML =
+                '<span class="prompt">' +
+                line.prompt +
+                '</span><span class="typed">' +
+                text +
+                '</span><span class="check">' +
+                line.suffix +
+                "</span>";
+            }, 200);
+          }
+          var holdTime = line.hold || 300;
+          setTimeout(function () { typeLine(lineIndex + 1); }, holdTime);
+        }
+      }
+
+      typeChar();
     }
 
-    typeChar();
-  }
+    function transitionToHero() {
+      if (booted) return;
+      booted = true;
 
-  function transitionToHero() {
-    if (booted) return;
-    booted = true;
+      terminal.classList.add("is-hidden");
 
-    terminal.classList.add("is-hidden");
+      setTimeout(function () {
+        terminal.style.display = "none";
+        heroContent.classList.add("visible");
+      }, 600);
+    }
 
-    setTimeout(function () {
-      terminal.style.display = "none";
-      heroContent.classList.add("visible");
-    }, 600);
-  }
+    // Skip on interaction — click or scroll immediately reveals the hero
+    function skipBoot() {
+      if (booted) return;
+      booted = true;
+      terminalLines.forEach(function (el) {
+        if (el) el.innerHTML = "";
+      });
+      terminal.classList.add("is-hidden");
+      setTimeout(function () {
+        terminal.style.display = "none";
+        heroContent.classList.add("visible");
+      }, 100);
+    }
 
-  // Skip on interaction — click or scroll immediately reveals the hero
-  function skipBoot() {
-    if (booted) return;
-    booted = true;
-    // Clear all terminal lines
-    terminalLines.forEach(function (el) {
-      if (el) el.innerHTML = "";
+    document.addEventListener("click", function (e) {
+      if (!booted && terminal && terminal.contains(e.target)) {
+        skipBoot();
+      }
     });
-    terminal.classList.add("is-hidden");
-    setTimeout(function () {
+
+    var scrollSkipTriggered = false;
+    window.addEventListener("wheel", function () {
+      if (!booted && !scrollSkipTriggered) {
+        scrollSkipTriggered = true;
+        skipBoot();
+      }
+    }, { passive: true });
+
+    // Start typing after brief delay
+    if (reduce) {
       terminal.style.display = "none";
       heroContent.classList.add("visible");
-    }, 100);
-  }
-
-  document.addEventListener("click", function (e) {
-    if (!booted && terminal && terminal.contains(e.target)) {
-      // Clicking the terminal itself skips the boot
-      skipBoot();
+      booted = true;
+    } else {
+      setTimeout(function () { typeLine(0); }, 400);
     }
-  });
-
-  var scrollSkipTriggered = false;
-  window.addEventListener("wheel", function () {
-    if (!booted && !scrollSkipTriggered) {
-      scrollSkipTriggered = true;
-      skipBoot();
-    }
-  }, { passive: true });
-
-  // Start typing after brief delay
-  if (reduce) {
-    // Reduced motion: skip terminal entirely, show hero
-    terminal.style.display = "none";
-    heroContent.classList.add("visible");
-  } else {
-    setTimeout(function () { typeLine(0); }, 400);
   }
 
   /* ─── nav: add hairline border once you scroll off the hero ─── */
@@ -141,7 +147,6 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var el = entry.target;
-        // stagger cards within the work grid by their order
         var parent = el.parentElement;
         var delay = 0;
         if (parent && parent.classList.contains("grid")) {
@@ -193,7 +198,6 @@
     window.addEventListener("load", schedule);
     window.addEventListener("resize", schedule, { passive: true });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
-    // re-pack as each image finishes loading (heights shift)
     grid.querySelectorAll("img").forEach(function (img) {
       if (img.complete) return;
       img.addEventListener("load", schedule);
@@ -202,17 +206,74 @@
     schedule();
   }
 
-  /* ─── video play button hint ─── */
-  var videoBtn = document.querySelector(".card__media--video");
-  if (videoBtn) {
-    videoBtn.addEventListener("click", function () {
-      var meta = videoBtn.querySelector(".video__meta i");
-      if (meta && !videoBtn.dataset.told) {
-        videoBtn.dataset.told = "1";
-        var original = meta.textContent;
-        meta.textContent = "add BACOMMERCIAL.mp4 to wire up playback";
-        setTimeout(function () { meta.textContent = original; }, 2600);
+  /* ─── lightbox ─── */
+  var overlay = document.getElementById("lightbox");
+  var lbImg = overlay ? overlay.querySelector(".lightbox-img") : null;
+  var lbTitle = overlay ? overlay.querySelector(".lightbox-title") : null;
+  var lbDesc = overlay ? overlay.querySelector(".lightbox-desc") : null;
+  var lbLink = overlay ? overlay.querySelector(".lightbox-link") : null;
+  var lbClose = overlay ? overlay.querySelector(".lightbox-close") : null;
+
+  function openLightbox(card) {
+    if (!overlay || !lbImg) return;
+    var title = card.getAttribute("data-title") || "";
+    var desc = card.getAttribute("data-desc") || "";
+    var img = card.getAttribute("data-img") || "";
+    var link = card.getAttribute("data-link") || "";
+
+    lbImg.src = img;
+    lbImg.alt = title;
+    lbTitle.textContent = title;
+    lbDesc.textContent = desc;
+
+    if (link) {
+      lbLink.href = link;
+      lbLink.style.display = "";
+      lbLink.textContent = "View project";
+    } else {
+      lbLink.style.display = "none";
+    }
+
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    lbClose.focus();
+  }
+
+  function closeLightbox() {
+    if (!overlay) return;
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // Click cards to open lightbox
+  document.querySelectorAll("[data-lightbox]").forEach(function (card) {
+    card.style.cursor = "pointer";
+    card.addEventListener("click", function () {
+      openLightbox(card);
+    });
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(card);
       }
     });
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", "View " + (card.getAttribute("data-title") || "project"));
+  });
+
+  // Close lightbox
+  if (lbClose) {
+    lbClose.addEventListener("click", closeLightbox);
   }
+  if (overlay) {
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) closeLightbox();
+    });
+  }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLightbox();
+  });
 })();
