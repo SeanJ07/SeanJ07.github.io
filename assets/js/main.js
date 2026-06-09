@@ -247,18 +247,27 @@
     document.body.style.overflow = "";
   }
 
-  // Click cards to open lightbox
-  document.querySelectorAll("[data-lightbox]").forEach(function (card) {
-    card.style.cursor = "pointer";
-    card.addEventListener("click", function () {
-      openLightbox(card);
+  // Click cards to open lightbox (event delegation on the grid)
+  var gridEl = document.querySelector(".grid");
+  if (gridEl && overlay) {
+    gridEl.addEventListener("click", function (e) {
+      var card = e.target.closest("[data-lightbox]");
+      if (card) openLightbox(card);
     });
-    card.addEventListener("keydown", function (e) {
+    gridEl.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openLightbox(card);
+        var card = e.target.closest("[data-lightbox]");
+        if (card) {
+          e.preventDefault();
+          openLightbox(card);
+        }
       }
     });
+  }
+
+  // Set a11y attributes on lightbox cards
+  document.querySelectorAll("[data-lightbox]").forEach(function (card) {
+    card.style.cursor = "pointer";
     card.setAttribute("tabindex", "0");
     card.setAttribute("role", "button");
     card.setAttribute("aria-label", "View " + (card.getAttribute("data-title") || "project"));
